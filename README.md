@@ -7,7 +7,7 @@
   </a>
 </p>
 
-<h1 align="center">Laravel Stisla</h1>
+<h1 align="center">TKAD App</h1>
 
 <span align="center">
 
@@ -37,17 +37,17 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [Quick start](#quick-start)
-- [License](#license)
-- [Supports](#supports)
+-   [Table of Contents](#table-of-contents)
+-   [Quick start](#quick-start)
+-   [License](#license)
+-   [Supports](#supports)
 
 ## Quick start
 
 Several quick start options are available:
 
--   Clone the repo: `git clone https://github.com/edikurniawan-dev/laravel-stisla.git`
--   Run `cd` to the newly created `/laravel-stisla` directory
+-   Clone the repo: `git clone https://github.com/ardigumelar/tkad-app.git`
+-   Run `cd` to the newly created `/tkad-app` directory
 -   Run `composer install` command
 -   Run `npm install` command
 -   Run `npm run dev` command
