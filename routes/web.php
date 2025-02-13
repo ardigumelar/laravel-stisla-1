@@ -1,6 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -13,7 +18,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::redirect('/', '/dashboard-general-dashboard');
+// dashboard
+// Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+Route::get('/dashboard', [DashboardController::class, 'index']);
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/', [LoginController::class, 'index'])->name('login');
+Route::post('/log', [LoginController::class, 'store'])->name('login.store');
+
+Route::get('/register', [RegisterController::class, 'index'])->name('register');
+Route::post('/regist', [RegisterController::class, 'store'])->name('register.store');
 
 // Dashboard
 Route::get('/dashboard-general-dashboard', function () {
@@ -200,6 +215,10 @@ Route::get('/auth-login', function () {
 Route::get('/auth-login2', function () {
     return view('pages.auth-login2', ['type_menu' => 'auth']);
 });
+// folder tampilan
+Route::get('/auth-login2', function () {
+    return view('tampilan.login', ['type_menu' => 'auth']);
+});
 Route::get('/auth-register', function () {
     return view('pages.auth-register', ['type_menu' => 'auth']);
 });
@@ -207,55 +226,55 @@ Route::get('/auth-reset-password', function () {
     return view('pages.auth-reset-password', ['type_menu' => 'auth']);
 });
 
-// error
-Route::get('/error-403', function () {
-    return view('pages.error-403', ['type_menu' => 'error']);
-});
-Route::get('/error-404', function () {
-    return view('pages.error-404', ['type_menu' => 'error']);
-});
-Route::get('/error-500', function () {
-    return view('pages.error-500', ['type_menu' => 'error']);
-});
-Route::get('/error-503', function () {
-    return view('pages.error-503', ['type_menu' => 'error']);
-});
+// // error
+// Route::get('/error-403', function () {
+//     return view('pages.error-403', ['type_menu' => 'error']);
+// });
+// Route::get('/error-404', function () {
+//     return view('pages.error-404', ['type_menu' => 'error']);
+// });
+// Route::get('/error-500', function () {
+//     return view('pages.error-500', ['type_menu' => 'error']);
+// });
+// Route::get('/error-503', function () {
+//     return view('pages.error-503', ['type_menu' => 'error']);
+// });
 
-// features
-Route::get('/features-activities', function () {
-    return view('pages.features-activities', ['type_menu' => 'features']);
-});
-Route::get('/features-post-create', function () {
-    return view('pages.features-post-create', ['type_menu' => 'features']);
-});
-Route::get('/features-post', function () {
-    return view('pages.features-post', ['type_menu' => 'features']);
-});
-Route::get('/features-profile', function () {
-    return view('pages.features-profile', ['type_menu' => 'features']);
-});
-Route::get('/features-settings', function () {
-    return view('pages.features-settings', ['type_menu' => 'features']);
-});
-Route::get('/features-setting-detail', function () {
-    return view('pages.features-setting-detail', ['type_menu' => 'features']);
-});
-Route::get('/features-tickets', function () {
-    return view('pages.features-tickets', ['type_menu' => 'features']);
-});
+// // features
+// Route::get('/features-activities', function () {
+//     return view('pages.features-activities', ['type_menu' => 'features']);
+// });
+// Route::get('/features-post-create', function () {
+//     return view('pages.features-post-create', ['type_menu' => 'features']);
+// });
+// Route::get('/features-post', function () {
+//     return view('pages.features-post', ['type_menu' => 'features']);
+// });
+// Route::get('/features-profile', function () {
+//     return view('pages.features-profile', ['type_menu' => 'features']);
+// });
+// Route::get('/features-settings', function () {
+//     return view('pages.features-settings', ['type_menu' => 'features']);
+// });
+// Route::get('/features-setting-detail', function () {
+//     return view('pages.features-setting-detail', ['type_menu' => 'features']);
+// });
+// Route::get('/features-tickets', function () {
+//     return view('pages.features-tickets', ['type_menu' => 'features']);
+// });
 
-// utilities
-Route::get('/utilities-contact', function () {
-    return view('pages.utilities-contact', ['type_menu' => 'utilities']);
-});
-Route::get('/utilities-invoice', function () {
-    return view('pages.utilities-invoice', ['type_menu' => 'utilities']);
-});
-Route::get('/utilities-subscribe', function () {
-    return view('pages.utilities-subscribe', ['type_menu' => 'utilities']);
-});
+// // utilities
+// Route::get('/utilities-contact', function () {
+//     return view('pages.utilities-contact', ['type_menu' => 'utilities']);
+// });
+// Route::get('/utilities-invoice', function () {
+//     return view('pages.utilities-invoice', ['type_menu' => 'utilities']);
+// });
+// Route::get('/utilities-subscribe', function () {
+//     return view('pages.utilities-subscribe', ['type_menu' => 'utilities']);
+// });
 
-// credits
-Route::get('/credits', function () {
-    return view('pages.credits', ['type_menu' => '']);
-});
+// // credits
+// Route::get('/credits', function () {
+//     return view('pages.credits', ['type_menu' => '']);
+// });
