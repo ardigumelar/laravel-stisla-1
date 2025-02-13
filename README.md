@@ -20,7 +20,7 @@
 <p align="center">
   <a href="https://getstisla.com">Homepage</a>
   •
-  <a href="https://github.com/edikurniawan-dev/laravel-stisla#quick-start">Getting Started</a>
+  <a href="https://github.com/ardigumelar/tkad-app#quick-start">Getting Started</a>
   •
   <a href="https://demo.getstisla.com" target="_new">Demo</a>
   •
@@ -28,7 +28,7 @@
   •
   <a href="https://getstisla.com/blog">Blog</a>
   •
-  <a href="https://github.com/edikurniawan-dev/laravel-stisla/issues">Issue</a>
+  <a href="https://github.com/ardigumelar/tkad-app/issues">Issue</a>
 </p>
 
 <br>
