@@ -7,7 +7,7 @@
   </a>
 </p>
 
-<h1 align="center">Tunas Karya Adhitama App</h1>
+<h1 align="center">TKAD App</h1>
 
 <span align="center">
 
