@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
 
 
 /*
@@ -19,8 +19,8 @@ use App\Http\Controllers\HomeController;
 */
 
 // dashboard
-// Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth');
+// Route::get('/dashboard', [DashboardController::class, 'index']);
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
 
@@ -30,6 +30,19 @@ Route::post('/log', [LoginController::class, 'store'])->name('login.store');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/regist', [RegisterController::class, 'store'])->name('register.store');
 
+route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+
+
+
+
+
+
+
+
+
+
+
+
 // Dashboard
 Route::get('/dashboard-general-dashboard', function () {
     return view('pages.dashboard-general-dashboard', ['type_menu' => 'dashboard']);
@@ -37,7 +50,6 @@ Route::get('/dashboard-general-dashboard', function () {
 Route::get('/dashboard-ecommerce-dashboard', function () {
     return view('pages.dashboard-ecommerce-dashboard', ['type_menu' => 'dashboard']);
 });
-
 
 // Layout
 Route::get('/layout-default-layout', function () {
