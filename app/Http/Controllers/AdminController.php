@@ -11,6 +11,7 @@ class AdminController extends Controller
     public function index()
     {
         $type_menu = User::get();
+
         return view('admin.v_users',compact('type_menu'));
     }
 
